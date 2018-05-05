@@ -1,8 +1,8 @@
-const express = require('express')
-const path = require('path')
-const PORT = process.env.PORT || 5000
+const express = require('express');
+const path = require('path');
+const PORT = process.env.PORT || 5000;
 const router = express.Router();
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 const mongoDB = 'mongodb://127.0.0.1/crm';
 
 mongoose.connect(mongoDB);
@@ -17,4 +17,4 @@ express()
     .set('views', path.join(__dirname, 'views'))
     .set('view engine', 'ejs')
     .get('/', (req, res) => res.render('pages/index'))
-    .listen(PORT, () => console.log(`Listening on ${PORT}`))
+    .listen(PORT);

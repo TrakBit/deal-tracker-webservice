@@ -1,24 +1,32 @@
 const express = require('express');
 const router = express.Router();
 const Deal = require('../models/deal')
-
 router.route('/deals')
 
-.post((req, res) => {
+    .post((req, res) => {
 
-    var deal = new Deal();
-    deal.id = req.body.id;
-    deal.name = req.body.name;
-    deal.stage = req.body.stage;
-    deal.amount = req.body.amount;
+        const deal = new Deal();
+        deal.id = req.body.id;
+        deal.name = req.body.name;
+        deal.stage = req.body.stage;
+        deal.amount = req.body.amount;
 
-    deal.save((err) => {
-        if (err)
-            res.send(err);
+        deal.save((err) => {
+            if (err)
+                res.send(err);
 
-        res.json({ message: 'deal created!' });
+            res.json({ message: 'deal created!' });
+        });
+
+    })
+
+    .get((req, res) => {
+        Deal.find((err, deals) => {
+            if (err)
+                res.send(err);
+
+            res.json(deals);
+        });
     });
-
-});
 
 module.exports = router;

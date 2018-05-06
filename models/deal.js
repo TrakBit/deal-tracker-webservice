@@ -8,4 +8,4 @@ const DealSchema = new Schema({
     stage: Number
 })
 
-module.exports = mongoose.model({'Deal', DealSchema})
+module.exports = mongoose.model('Deal', DealSchema)

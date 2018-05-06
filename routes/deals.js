@@ -4,7 +4,7 @@ const Deal = require('../models/deal')
 router.route('/deals')
 
     .post((req, res) => {
-
+        
         const deal = new Deal();
         deal.id = req.body.id;
         deal.name = req.body.name;
@@ -14,7 +14,6 @@ router.route('/deals')
         deal.save((err) => {
             if (err)
                 res.send(err);
-
             res.json({ message: 'deal created!' });
         });
 
@@ -24,7 +23,6 @@ router.route('/deals')
         Deal.find((err, deals) => {
             if (err)
                 res.send(err);
-
             res.json(deals);
         });
     });

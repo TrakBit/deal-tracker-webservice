@@ -4,7 +4,6 @@ const Deal = require('../models/deal')
 router.route('/deals')
 
     .post((req, res) => {
-        
         const deal = new Deal();
         deal.id = req.body.id;
         deal.name = req.body.name;
@@ -12,27 +11,30 @@ router.route('/deals')
         deal.amount = req.body.amount;
 
         deal.save((err) => {
-            if (err)
+            if (err) {
                 res.send(err);
-            res.json({ message: 'deal created!' });
+            }
+            res.json({message: 'deal created!'});
         });
-
     })
 
     .get((req, res) => {
         Deal.find((err, deals) => {
-            if (err)
+            if (err) {
                 res.send(err);
+            }
             res.json(deals);
+            return null;
         });
     })
 
     .delete((req, res) => {
         Deal.findByIdAndRemove(req.body._id, (err, deal) => {
-            if (err)
+            if (err) {
                 res.send(err);
+            }
             res.json(deal);
-        })       
+        })
     });
 
 module.exports = router;

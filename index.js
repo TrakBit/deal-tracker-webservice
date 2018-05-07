@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
     res.json({ message: 'Deal Tracker Application' });
 });
 
-app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.urlencoded({ extended: true }))			
 app.use(bodyParser.json())
 
 app

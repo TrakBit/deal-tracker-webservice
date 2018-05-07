@@ -25,6 +25,14 @@ router.route('/deals')
                 res.send(err);
             res.json(deals);
         });
+    })
+
+    .delete((req, res) => {
+        Deal.findByIdAndRemove(req.body._id, (err, deal) => {
+            if (err)
+                res.send(err);
+            res.json(deal);
+        })       
     });
 
 module.exports = router;

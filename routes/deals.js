@@ -35,6 +35,15 @@ router.route('/deals')
             }
             res.json(deal);
         })
+    })
+
+    .put((req, res) => {
+        Deal.findByIdAndUpdate(req.body._id, req.body, {new: true}, (err, deal) => {
+            if (err) {
+                res.send(err);
+            }
+            res.json(deal);
+        })
     });
 
 module.exports = router;

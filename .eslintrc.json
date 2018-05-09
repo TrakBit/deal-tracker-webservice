@@ -2,8 +2,7 @@
     "plugins": ["node"],
     "extends": ["eslint:recommended", "plugin:node/recommended"],
     "rules": {
-        "node/exports-style": ["error", "module.exports"],
-         "array-bracket-spacing": [2, "never"],
+        "array-bracket-spacing": [2, "never"],
         "array-callback-return": 2,
         "arrow-body-style": 0,
         "arrow-parens": [2, "always"],
@@ -161,5 +160,8 @@
         "quote-props": [2, "as-needed"],
         "quotes": [2, "single", "avoid-escape"],
         "radix": 2
+    },
+    "parserOptions": {
+        "sourceType": "module"
     }
 }

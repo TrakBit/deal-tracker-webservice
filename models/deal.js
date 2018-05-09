@@ -1,4 +1,7 @@
-const mongoose = require('mongoose')
+/* eslint-disable */
+import mongoose from 'mongoose';
+/* eslint-enable */
+
 const Schema = mongoose.Schema;
 
 const DealSchema = new Schema({
@@ -8,4 +11,5 @@ const DealSchema = new Schema({
     stage: Number
 })
 
-module.exports = mongoose.model('Deal', DealSchema)
+/* eslint-disable */
+export default mongoose.model('Deal', DealSchema);

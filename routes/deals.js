@@ -1,6 +1,9 @@
-const express = require('express');
+/* eslint-disable */
+import express from 'express';
+import Deal from '../models/deal';
+/* eslint-enable */
+
 const router = express.Router();
-const Deal = require('../models/deal')
 router.route('/deals')
 
     .post((req, res) => {
@@ -46,4 +49,5 @@ router.route('/deals')
         })
     });
 
-module.exports = router;
+/* eslint-disable */
+export default router;

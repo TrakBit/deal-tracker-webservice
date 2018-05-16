@@ -4,10 +4,11 @@ import path from 'path';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import router from './routes/deals';
+import {username, password} from './user';
 /* eslint-enable */
 
 const PORT = process.env.PORT || 5000;
-const mongoDB = 'mongodb://trakbit:admin123@ds161245.mlab.com:61245/heroku_9g243c05';
+const mongoDB = 'mongodb://' + username + ':' + password + '@ds161245.mlab.com:61245/heroku_9g243c05';
 const app = express();
 
 mongoose.connect(mongoDB, (err) => {
